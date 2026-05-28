@@ -3,16 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Sitio en construcción para bastiansanches.dev" />
-    <title>bastiansanches.dev | En construcción</title>
+    <meta
+      name="description"
+      content="Portafolio profesional de Bastian Sanches Muñoz, desarrollador fullstack especializado en arquitectura web, experiencias modernas y soluciones empresariales."
+    />
+    <title>Bastian Sanches Muñoz | Fullstack Developer</title>
     <style>
       :root {
         color-scheme: dark;
-        --bg: #0f172a;
-        --panel: rgba(15, 23, 42, 0.8);
-        --text: #e2e8f0;
-        --muted: #94a3b8;
-        --accent: #38bdf8;
+        --bg: #05070d;
+        --panel: rgba(17, 23, 35, 0.75);
+        --text: #f4f7ff;
+        --muted: #a4adbe;
+        --stroke: rgba(255, 255, 255, 0.12);
+        --accent: #5ab7ff;
+        --accent-soft: rgba(90, 183, 255, 0.17);
       }
 
       * {
@@ -26,63 +31,242 @@
       }
 
       body {
-        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-family:
+          "Inter",
+          "SF Pro Display",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
         background:
-          radial-gradient(circle at top, rgba(56, 189, 248, 0.2), transparent 35%),
-          linear-gradient(160deg, #020617, var(--bg));
+          radial-gradient(circle at 0% 0%, rgba(90, 183, 255, 0.25), transparent 42%),
+          radial-gradient(circle at 100% 10%, rgba(170, 118, 255, 0.18), transparent 36%),
+          linear-gradient(180deg, #05070d 0%, #090f1d 100%);
         color: var(--text);
-        display: grid;
-        place-items: center;
-        padding: 24px;
+        padding: clamp(24px, 3vw, 42px);
       }
 
       main {
-        width: min(100%, 720px);
-        padding: 48px 32px;
-        background: var(--panel);
-        border: 1px solid rgba(148, 163, 184, 0.2);
-        border-radius: 24px;
-        text-align: center;
-        box-shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
-        backdrop-filter: blur(10px);
+        width: min(1100px, 100%);
+        margin: 0 auto;
+        display: grid;
+        gap: 16px;
       }
 
-      .badge {
-        display: inline-block;
-        margin-bottom: 20px;
-        padding: 8px 14px;
+      section {
+        background: var(--panel);
+        border: 1px solid var(--stroke);
+        border-radius: 24px;
+        padding: clamp(20px, 3vw, 36px);
+        backdrop-filter: blur(11px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition: transform 180ms ease, border-color 180ms ease;
+      }
+
+      section:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        padding: 7px 12px;
         border-radius: 999px;
-        background: rgba(56, 189, 248, 0.12);
+        background: var(--accent-soft);
         color: var(--accent);
-        font-size: 0.875rem;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
+        font-size: 0.77rem;
+        font-weight: 600;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1.1;
       }
 
       h1 {
-        margin: 0;
-        font-size: clamp(2.2rem, 7vw, 4.5rem);
-        line-height: 1.05;
+        font-size: clamp(2rem, 6vw, 4rem);
+        max-width: 18ch;
+      }
+
+      h2 {
+        font-size: clamp(1.25rem, 3vw, 1.9rem);
+        margin-bottom: 12px;
       }
 
       p {
-        margin: 18px auto 0;
-        max-width: 38rem;
-        font-size: clamp(1.05rem, 2.5vw, 1.25rem);
-        line-height: 1.7;
+        margin: 0;
         color: var(--muted);
+        line-height: 1.65;
       }
 
+      .hero p {
+        margin-top: 18px;
+        max-width: 70ch;
+        font-size: clamp(1rem, 1.5vw, 1.14rem);
+      }
+
+      .meta {
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .pill {
+        border: 1px solid var(--stroke);
+        border-radius: 999px;
+        padding: 8px 12px;
+        color: #d2e2ff;
+        font-size: 0.88rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .list {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .stack-group {
+        display: grid;
+        gap: 12px;
+      }
+
+      .stack-group h3 {
+        font-size: 1rem;
+        color: #d9e9ff;
+      }
+
+      .stack-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .stack-tags span {
+        border: 1px solid var(--stroke);
+        border-radius: 999px;
+        padding: 7px 11px;
+        font-size: 0.83rem;
+        color: #c7dbff;
+      }
+
+      footer {
+        text-align: center;
+        color: #97a2b5;
+        font-size: 0.87rem;
+        margin-top: 8px;
+      }
     </style>
   </head>
   <body>
     <main>
-      <span class="badge">En construcción</span>
-      <h1>bastiansanches.dev</h1>
-      <p>
-        Estamos preparando una nueva página para este dominio. Vuelve pronto para
-        ver el resultado final.
-      </p>
+      <section class="hero">
+        <span class="eyebrow">Bastian Sanches Muñoz · Fullstack Developer</span>
+        <h1>Desarrollo software con enfoque empresarial, premium y escalable.</h1>
+        <p>
+          Soy estudiante de Ingeniería en Informática en DUOC UC y desarrollador fullstack en Audiomusica desde abril de 2026. Diseño y construyo plataformas web modernas, sistemas administrativos internos y soluciones digitales orientadas a optimizar procesos reales de negocio.
+        </p>
+        <div class="meta">
+          <span class="pill">Arquitectura Web</span>
+          <span class="pill">UI/UX Moderna</span>
+          <span class="pill">Frontend + Backend</span>
+          <span class="pill">DevOps &amp; Linux</span>
+        </div>
+      </section>
+
+      <div class="grid grid-2">
+        <section>
+          <h2>Experiencia Profesional</h2>
+          <ul class="list">
+            <li>Desarrollador fullstack en Audiomusica, implementando plataformas empresariales y sistemas internos.</li>
+            <li>Participación completa en frontend y backend: interfaces, APIs, autenticación, lógica de negocio y despliegue.</li>
+            <li>Construcción de soluciones enfocadas en rendimiento, mantenimiento y escalabilidad.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Proyectos Freelance</h2>
+          <ul class="list">
+            <li>Desarrollo de páginas web modernas y sistemas personalizados para clientes.</li>
+            <li>Plataforma fullstack para empresa de estética y belleza: reservas, perfiles, servicios y autenticación.</li>
+            <li>Optimización visual avanzada con enfoque en experiencia interactiva y diseño minimalista premium.</li>
+          </ul>
+        </section>
+      </div>
+
+      <section>
+        <h2>Stack Tecnológico</h2>
+        <div class="grid grid-2" style="margin-top: 14px">
+          <article class="stack-group">
+            <h3>Frontend</h3>
+            <div class="stack-tags">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Angular</span>
+              <span>TailwindCSS</span>
+              <span>Vite</span>
+              <span>Framer Motion</span>
+              <span>GSAP</span>
+            </div>
+          </article>
+          <article class="stack-group">
+            <h3>Backend</h3>
+            <div class="stack-tags">
+              <span>.NET</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>Spring Boot</span>
+            </div>
+          </article>
+          <article class="stack-group">
+            <h3>Bases de Datos</h3>
+            <div class="stack-tags">
+              <span>SQL Server</span>
+              <span>PostgreSQL</span>
+              <span>MySQL</span>
+              <span>Oracle</span>
+            </div>
+          </article>
+          <article class="stack-group">
+            <h3>DevOps &amp; Arquitectura</h3>
+            <div class="stack-tags">
+              <span>Docker</span>
+              <span>Git/GitHub</span>
+              <span>Linux Servers</span>
+              <span>Nginx</span>
+              <span>APIs REST</span>
+              <span>JWT Auth</span>
+              <span>Microservicios</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Enfoque Profesional</h2>
+        <p>
+          Me defino como una persona autodidacta, proactiva y orientada a la mejora continua. Me involucro en todas las etapas del ciclo de desarrollo para entregar productos modernos, sólidos y con una experiencia tipo Apple/Tesla/Stripe: visualmente limpia, técnicamente robusta y enfocada en resultados.
+        </p>
+      </section>
+      <footer>© 2026 · bastiansanches.dev</footer>
     </main>
   </body>
 </html>
